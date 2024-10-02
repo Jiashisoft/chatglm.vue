@@ -34,7 +34,7 @@ npm install pnpm -g
 ```
 
 ### 3、配置填写密钥
-获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#6、环境变量)
+获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#6环境变量)
 
 ```
 # service/.env 文件
