@@ -8,34 +8,34 @@
 ![show program code](./docs/testChart.png)
 
 ## 一、版本特性
-[✓] 多会话储存和上下文逻辑
-[✓] 对代码等消息类型的格式化美化处理
-[✓] 访问权限控制
-[✓] 数据导入、导出
-[✓] 保存消息到本地图片
-[✓] 界面多语言
-[✓] 界面主题
+[✓] 多会话储存和上下文逻辑<br />
+[✓] 对代码等消息类型的格式化美化处理<br />
+[✓] 访问权限控制<br />
+[✓] 数据导入、导出<br />
+[✓] 保存消息到本地图片<br />
+[✓] 界面多语言<br />
+[✓] 界面主题<br />
 
 ## 二、安装部署
 
-### 1、Node.js
+### 1、安装Node.js
 
-`node` 需要 >= 20 (node.js v18不行) <br />
+`node` 需要 >= 20 (实测node.js v18 已经不行) <br />
 `node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill) <br />
-使用 [nvm](https://github.com/nvm-sh/nvm) 可管理本地多个 `node` 版本
+使用 [nvm](https://github.com/nvm-sh/nvm) 可管理本地多个 `node` 版本<br />
 
 ```shell
 node -v
 ```
 
-### 2、PNPM包
+### 2、装PNPM包
 如果你没有安装过 `pnpm`
 ```shell
 npm install pnpm -g
 ```
 
 ### 3、配置填写密钥
-获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#环境变量)
+获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#6、环境变量)
 
 ```
 # service/.env 文件
@@ -44,7 +44,7 @@ OPENAI_API_KEY=
 
 ```
 
-## 4、安装依赖
+## 4、安装依赖包
 
 > 为了简便 `后端开发人员` 的了解负担，所以并没有采用前端 `workspace` 模式，而是分文件夹存放。如果只需要前端页面做二次开发，删除 `service` 文件夹即可。
 > 把项目发布到公共网络前，如需做访问权限控制，你应该设置配置文件 `AUTH_SECRET_KEY` 变量添加你的密码保护，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
