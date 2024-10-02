@@ -17,7 +17,7 @@
 
 ## 二、安装部署
 
-### 1、安装Node.js
+### 2.1 安装Node.js
 
 `node` 需要 >= 20 (实测node.js v18 已经不行) <br />
 （可选）`node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill) <br />
@@ -27,13 +27,13 @@
 node -v
 ```
 
-### 2、装PNPM包
+### 2.2 装PNPM包
 如果你没有安装过 `pnpm`
 ```shell
 npm install pnpm -g
 ```
 
-### 3、配置填写密钥
+### 2.3 配置填写密钥
 获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#6环境变量)
 
 ```
@@ -43,12 +43,12 @@ OPENAI_API_KEY=
 
 ```
 
-## 4、安装依赖包
+## 三、安装依赖包
 
 > 为了简便 `后端开发人员` 的了解负担，所以并没有采用前端 `workspace` 模式，而是分文件夹存放。如果只需要前端页面做二次开发，删除 `service` 文件夹即可。
 > 把项目发布到公共网络前，如需做访问权限控制，你应该设置配置文件 `AUTH_SECRET_KEY` 变量添加你的密码保护，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
 
-### 4.1 后端
+### 3.1 后端
 
 进入文件夹 `/service` 运行以下命令
 
@@ -56,14 +56,14 @@ OPENAI_API_KEY=
 pnpm install
 ```
 
-### 4.2前端
+### 3.2前端
 根目录下运行以下命令
 ```shell
 pnpm bootstrap
 ```
 
-## 5、测试运行
-### 5.1 后端服务
+## 四、测试运行
+### 4.1 后端服务
 
 进入文件夹 `/service` 运行以下命令
 
@@ -71,13 +71,13 @@ pnpm bootstrap
 pnpm start
 ```
 
-### 5.2 前端网页
+### 4.2 前端网页
 根目录下运行以下命令
 ```shell
 pnpm dev
 ```
 
-## 6、环境变量
+## 五、环境变量
 
 `API` 可用：
 
@@ -96,9 +96,9 @@ pnpm dev
 - `HTTPS_PROXY` 支持 `http`，`https`, `socks5`，可选
 - `ALL_PROXY` 支持 `http`，`https`, `socks5`，可选
 
-## 7、打包发布
+## 六、打包发布
 
-### 7.1 防止爬虫抓取
+### 6.1 防止爬虫抓取
 
 **nginx**
 
@@ -112,8 +112,8 @@ pnpm dev
     }
 ```
 
-### 7.2 手动打包
-#### 7.2.1 后端服务
+### 6.2 手动打包
+#### 6.2.1 后端服务
 > 如果你不需要本项目的 `node` 接口，可以省略如下操作
 
 复制 `service` 文件夹到你有 `node` 服务环境的服务器上。
@@ -131,7 +131,7 @@ pnpm prod
 
 PS: 不进行打包，直接在服务器上运行 `pnpm start` 也可
 
-#### 7.2.2 前端网页
+#### 6.2.2 前端网页
 
 1、修改根目录下 `.env` 文件中的 `VITE_GLOB_API_URL` 为你的实际后端接口地址
 
@@ -143,7 +143,7 @@ PS: 不进行打包，直接在服务器上运行 `pnpm start` 也可
 pnpm build
 ```
 
-## 8、常见问题
+## 七、常见问题
 Q: 为什么 `Git` 提交总是报错？
 
 A: 因为有提交信息验证，请遵循 [Commit 指南](./CONTRIBUTING.md)
@@ -160,7 +160,7 @@ Q: 前端没有打字机效果？
 
 A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx 会尝试从后端缓冲一定大小的数据再发送给浏览器。请尝试在反代参数后添加 `proxy_buffering off;`，然后重载 Nginx。其他 web server 配置同理。
 
-## 9、参与贡献
+## 八、参与贡献
 
 贡献之前请先阅读 [贡献指南](./CONTRIBUTING.md)
 
@@ -170,11 +170,11 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
   <img src="https://contrib.rocks/image?repo=Chanzhaoyu/chatgpt-web" />
 </a>
 
-## 10、致谢
+## 九、致谢
 
 感谢 [JetBrains](https://www.jetbrains.com/) 为这个项目提供免费开源许可的软件。
 
-## 11、赞助
+## 十、赞助
 
 如果你觉得这个项目对你有帮助，并且情况允许的话，可以给原作者一点点支持，总之非常感谢支持～
 
@@ -189,5 +189,5 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 	</div>
 </div>
 
-## 12、许可证和所有权 License
+## 许可证和所有权 License
 MIT © [ChenZhaoYu](./license)
