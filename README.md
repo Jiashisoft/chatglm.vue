@@ -4,7 +4,6 @@
 > 本项目不会提供和组织任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
 ![cover](./docs/testGLM.png)
-![show math symbol](./docs/testLatex.png)
 ![show program code](./docs/testChart.png)
 
 ## 一、版本特性
