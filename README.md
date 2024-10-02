@@ -1,6 +1,6 @@
 # ChatGLM-Web
 
-> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于 MIT 协议，开源免费且只作为学习大语言模型问答API使用。
+> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于Vue技术框架和chatGLM在线接口，遵守 MIT 协议，开源免费且只作为学习调用大语言模型问答API的样例。
 > 本项目不会提供和组织任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
 ![cover](./docs/testGLM.png)
