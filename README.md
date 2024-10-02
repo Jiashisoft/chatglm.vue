@@ -20,7 +20,7 @@
 ### 1、安装Node.js
 
 `node` 需要 >= 20 (实测node.js v18 已经不行) <br />
-`node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill) <br />
+（可选）`node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill) <br />
 使用 [nvm](https://github.com/nvm-sh/nvm) 可管理本地多个 `node` 版本<br />
 
 ```shell
