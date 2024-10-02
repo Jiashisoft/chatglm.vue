@@ -1,10 +1,10 @@
 # ChatGLM-Web
 
-> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于 MIT 协议，免费且作为开源学习使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
+> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于 MIT 协议，开源免费且只作为学习大语言模型问答API使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
 ![cover](./docs/testGLM.png)
 
-- [ChatGPT Web](#chatgpt-web)
+- [ChatGLM Web]
 	- [介绍](#介绍)
 	- [待实现路线](#待实现路线)
 	- [前置要求](#前置要求)
@@ -28,15 +28,14 @@
 	- [致谢](#致谢)
 	- [赞助](#赞助)
 	- [License](#license)
+
 ## 介绍
 
-1. 支持双模型，你应该首先使用 `API` 方式。
-2. 把项目发布到公共网络时，你应该设置 `AUTH_SECRET_KEY` 变量添加你的密码访问权限，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
-
-切换方式：
+支持双模型，你应该首先使用 `API` 方式。切换方式：
 1. 进入 `service/.env` 文件
 2. 使用 `OpenAI API Key` 请填写 `OPENAI_API_KEY` 字段
 3. `OPENAI_ACCESS_TOKEN`同时存在时以 `OpenAI API Key` 优先
+4. 把项目发布到公共网络时，你应该设置 `AUTH_SECRET_KEY` 变量添加你的密码访问权限，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
 
 环境变量：
 
