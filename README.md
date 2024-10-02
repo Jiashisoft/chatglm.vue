@@ -1,87 +1,41 @@
 # ChatGLM-Web
 
-> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于 MIT 协议，开源免费且只作为学习大语言模型问答API使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
+> 声明：此项目是在 GitHub 作者ChenZhaoYu的开源项目 Chatgpt_web 基础上修改的，基于 MIT 协议，开源免费且只作为学习大语言模型问答API使用。
+> 本项目不会提供和组织任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
 ![cover](./docs/testGLM.png)
+![show math symbol](./docs/testLatex.png)
+![show program code](./docs/testChart.png)
 
-- [ChatGLM Web]
-	- [介绍](#介绍)
-	- [待实现路线](#待实现路线)
-	- [前置要求](#前置要求)
-		- [Node](#node)
-		- [PNPM](#pnpm)
-		- [填写密钥](#填写密钥)
-	- [安装依赖](#安装依赖)
-		- [后端](#后端)
-		- [前端](#前端)
-	- [测试环境运行](#测试环境运行)
-		- [后端服务](#后端服务)
-		- [前端网页](#前端网页)
-	- [环境变量](#环境变量)
-	- [打包](#打包)
-			- [防止爬虫抓取](#防止爬虫抓取)
-		- [手动打包](#手动打包)
-			- [后端服务](#后端服务-1)
-			- [前端网页](#前端网页-1)
-	- [常见问题](#常见问题)
-	- [参与贡献](#参与贡献)
-	- [致谢](#致谢)
-	- [赞助](#赞助)
-	- [License](#license)
-
-## 介绍
-
-支持双模型，你应该首先使用 `API` 方式。切换方式：
-1. 进入 `service/.env` 文件
-2. 使用 `OpenAI API Key` 请填写 `OPENAI_API_KEY` 字段
-3. `OPENAI_ACCESS_TOKEN`同时存在时以 `OpenAI API Key` 优先
-4. 把项目发布到公共网络时，你应该设置 `AUTH_SECRET_KEY` 变量添加你的密码访问权限，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
-
-环境变量：
-
-全部参数变量请查看或[这里](#环境变量)
-
-```
-/service/.env
-```
-
-## 待实现路线
-[✓] 双模型
-
+## 一、版本特性
 [✓] 多会话储存和上下文逻辑
-
 [✓] 对代码等消息类型的格式化美化处理
-
 [✓] 访问权限控制
-
 [✓] 数据导入、导出
-
 [✓] 保存消息到本地图片
-
 [✓] 界面多语言
-
 [✓] 界面主题
 
-[✗] More...
+## 二、安装部署
 
-## 前置要求
+### 1、Node.js
 
-### Node
-
-`node` 需要 `^16 || ^18 || ^19` 版本（`node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill)），使用 [nvm](https://github.com/nvm-sh/nvm) 可管理本地多个 `node` 版本
+`node` 需要 >= 20 (node.js v18不行) <br />
+`node >= 14` 需要安装 [fetch polyfill](https://github.com/developit/unfetch#usage-as-a-polyfill) <br />
+使用 [nvm](https://github.com/nvm-sh/nvm) 可管理本地多个 `node` 版本
 
 ```shell
 node -v
 ```
 
-### PNPM
+### 2、PNPM包
 如果你没有安装过 `pnpm`
 ```shell
 npm install pnpm -g
 ```
 
-### 填写密钥
-获取 `Openai Api Key` 或 `accessToken` 并填写本地环境变量 [跳转](#介绍)
+### 3、配置填写密钥
+获取 `zhipuai Api Key`  并填写本地配置文件 [跳转](#环境变量)
 
 ```
 # service/.env 文件
@@ -90,11 +44,12 @@ OPENAI_API_KEY=
 
 ```
 
-## 安装依赖
+## 4、安装依赖
 
 > 为了简便 `后端开发人员` 的了解负担，所以并没有采用前端 `workspace` 模式，而是分文件夹存放。如果只需要前端页面做二次开发，删除 `service` 文件夹即可。
+> 把项目发布到公共网络前，如需做访问权限控制，你应该设置配置文件 `AUTH_SECRET_KEY` 变量添加你的密码保护，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
 
-### 后端
+### 4.1 后端
 
 进入文件夹 `/service` 运行以下命令
 
@@ -102,14 +57,14 @@ OPENAI_API_KEY=
 pnpm install
 ```
 
-### 前端
+### 4.2前端
 根目录下运行以下命令
 ```shell
 pnpm bootstrap
 ```
 
-## 测试环境运行
-### 后端服务
+## 5、测试运行
+### 5.1 后端服务
 
 进入文件夹 `/service` 运行以下命令
 
@@ -117,13 +72,13 @@ pnpm bootstrap
 pnpm start
 ```
 
-### 前端网页
+### 5.2 前端网页
 根目录下运行以下命令
 ```shell
 pnpm dev
 ```
 
-## 环境变量
+## 6、环境变量
 
 `API` 可用：
 
@@ -142,9 +97,9 @@ pnpm dev
 - `HTTPS_PROXY` 支持 `http`，`https`, `socks5`，可选
 - `ALL_PROXY` 支持 `http`，`https`, `socks5`，可选
 
-## 打包
+## 7、打包发布
 
-#### 防止爬虫抓取
+### 7.1 防止爬虫抓取
 
 **nginx**
 
@@ -158,8 +113,8 @@ pnpm dev
     }
 ```
 
-### 手动打包
-#### 后端服务
+### 7.2 手动打包
+#### 7.2.1 后端服务
 > 如果你不需要本项目的 `node` 接口，可以省略如下操作
 
 复制 `service` 文件夹到你有 `node` 服务环境的服务器上。
@@ -177,7 +132,7 @@ pnpm prod
 
 PS: 不进行打包，直接在服务器上运行 `pnpm start` 也可
 
-#### 前端网页
+#### 7.2.2 前端网页
 
 1、修改根目录下 `.env` 文件中的 `VITE_GLOB_API_URL` 为你的实际后端接口地址
 
@@ -189,7 +144,7 @@ PS: 不进行打包，直接在服务器上运行 `pnpm start` 也可
 pnpm build
 ```
 
-## 常见问题
+## 8、常见问题
 Q: 为什么 `Git` 提交总是报错？
 
 A: 因为有提交信息验证，请遵循 [Commit 指南](./CONTRIBUTING.md)
@@ -206,7 +161,7 @@ Q: 前端没有打字机效果？
 
 A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx 会尝试从后端缓冲一定大小的数据再发送给浏览器。请尝试在反代参数后添加 `proxy_buffering off;`，然后重载 Nginx。其他 web server 配置同理。
 
-## 参与贡献
+## 9、参与贡献
 
 贡献之前请先阅读 [贡献指南](./CONTRIBUTING.md)
 
@@ -216,11 +171,11 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
   <img src="https://contrib.rocks/image?repo=Chanzhaoyu/chatgpt-web" />
 </a>
 
-## 致谢
+## 10、致谢
 
 感谢 [JetBrains](https://www.jetbrains.com/) 为这个项目提供免费开源许可的软件。
 
-## 赞助
+## 11、赞助
 
 如果你觉得这个项目对你有帮助，并且情况允许的话，可以给原作者一点点支持，总之非常感谢支持～
 
@@ -235,5 +190,5 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 	</div>
 </div>
 
-## License
+## 12、许可证和所有权 License
 MIT © [ChenZhaoYu](./license)
